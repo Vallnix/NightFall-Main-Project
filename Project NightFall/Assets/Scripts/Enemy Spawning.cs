@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class EnemySpawning : MonoBehaviour
 {
-    [SerializeField] private float rate = 1f;
+    [SerializeField] private float rate = 10f;
     [SerializeField] GameObject zombiePrefab;
     [SerializeField] private bool spawning = true;
 
-    float xMin;
-    float yMin;
 
     private void Start()
     {
