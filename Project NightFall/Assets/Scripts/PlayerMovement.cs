@@ -6,38 +6,21 @@ public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [SerializeField] float moveSpeed = 0.8f;
+    float moveSpeed;
 
-    public Rigidbody2D rb;
-
-    private Vector2 mDirection;
+    private Rigidbody2D rb;
 
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        Inputs();
-    }
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
 
-    void FixedUpdate()
-    {
-        Movement();
-    }
-
-    void Inputs()
-    {
-        float xMove = Input.GetAxisRaw("Horizontal");
-        float yMove = Input.GetAxisRaw("Vertical");
-
-        mDirection = new Vector2(xMove, yMove); //Come Back
-    }
-
-    void Movement()
-    {
-        rb.velocity = new Vector2(mDirection.x * moveSpeed, mDirection.y * moveSpeed);
+        rb.velocity = new Vector2 (moveX + moveSpeed, moveY + moveSpeed);
     }
 }
