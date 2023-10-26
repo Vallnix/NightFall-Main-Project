@@ -11,7 +11,7 @@ public class SwordSlash : MonoBehaviour
 
     void Start()
     {
-        playerStats = GameObject.FindObjectOfType<PlayerStats>().GetComponent<PlayerStats>();
+        playerStats= GameObject.FindObjectOfType<PlayerStats>().GetComponent<PlayerStats>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
