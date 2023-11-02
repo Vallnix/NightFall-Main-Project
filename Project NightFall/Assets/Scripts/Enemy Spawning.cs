@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemySpawning : MonoBehaviour
 {
-    [SerializeField] private float rate = 10f;
+    float rate = 5f;
     [SerializeField] GameObject zombiePrefab;
     [SerializeField] private bool spawning = true;
 
@@ -12,7 +13,14 @@ public class EnemySpawning : MonoBehaviour
     private void Start()
     {
         StartCoroutine(Spawner());
+
+
     }
+    private void Update()
+    {
+      
+    }
+   
 
     private IEnumerator Spawner()
     {
@@ -23,7 +31,7 @@ public class EnemySpawning : MonoBehaviour
             yield return wait;
 
             Instantiate(zombiePrefab, transform.position, Quaternion.identity);
-
         }
     }
+   
 }

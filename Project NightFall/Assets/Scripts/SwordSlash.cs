@@ -23,4 +23,6 @@ public class SwordSlash : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    
 }

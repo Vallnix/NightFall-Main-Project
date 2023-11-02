@@ -15,4 +15,5 @@ public class PlayerAim : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation,rotation, rotationSpeed * Time.deltaTime);
 
     }
+   
 }
