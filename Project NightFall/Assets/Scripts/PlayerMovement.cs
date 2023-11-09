@@ -23,4 +23,5 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = new Vector2 (moveX + moveSpeed, moveY + moveSpeed);
     }
+  
 }

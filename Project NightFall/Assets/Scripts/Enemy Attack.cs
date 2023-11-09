@@ -11,6 +11,7 @@ public class EnemyAttack : MonoBehaviour
     
     private float distance;
     int kills = 0;
+   
 
     [SerializeField] GameManager manager;
 
@@ -18,9 +19,11 @@ public class EnemyAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distance = Vector2.Distance(transform.position, player.transform.position);
+        
+            distance = Vector2.Distance(transform.position, player.transform.position);
 
-        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -30,6 +33,8 @@ public class EnemyAttack : MonoBehaviour
 
             GameManager.instance.GameOver();
             Destroy(player);
+            player = null;
+            Debug.Log("Hit");
         }
         else 
         {
